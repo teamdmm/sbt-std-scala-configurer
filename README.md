@@ -1,0 +1,1 @@
+# sbt-std-scala-configurer
