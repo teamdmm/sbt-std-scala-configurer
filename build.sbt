@@ -12,6 +12,7 @@ sbtPlugin := true
 
 addSbtPlugin(Dependencies.wartRemover)
 addSbtPlugin(Dependencies.scalaFmt)
+addSbtPlugin(Dependencies.dotEnv)
 
 licenses +=("Apache-2.0", url("http://opensource.org/licenses/apache2.0.php"))
 
