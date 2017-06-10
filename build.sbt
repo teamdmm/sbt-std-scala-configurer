@@ -1,10 +1,9 @@
-name := "sbt-std-scala-configurer"
-
 // some duplication between this and actual implementation (settings) we provide,
 // since it's cyclical dependency
 
 organization in ThisBuild := "io.superphone"
 organizationName in ThisBuild := "Disruptive Multimedia"
+name := "sbt-std-scala-configurer"
 
 // because until sbt is 1.x we have to stick to old scala
 scalaVersion := "2.10.6"
