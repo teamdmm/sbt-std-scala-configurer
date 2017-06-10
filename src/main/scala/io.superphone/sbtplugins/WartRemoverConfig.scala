@@ -1,4 +1,4 @@
-package fm.dmm.superphone.sbtplugins
+package io.superphone.sbtplugins
 
 import sbt._
 
