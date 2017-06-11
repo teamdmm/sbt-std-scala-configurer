@@ -21,7 +21,9 @@ object SbtStdScalaConfigurer extends AutoPlugin {
   }
 
   import autoImport._
-  lazy val defaultSettings: Seq[Setting[_]] = Seq(
+  lazy val defaultSettings: Seq[Setting[_]] =
+    Seq(
+    // -- Configure publishing:
 
     // -- Configure Scalac:
     scalacOptions ++= ScalaFlags.flagsFor(scalaVersion.value),
@@ -39,10 +41,10 @@ object SbtStdScalaConfigurer extends AutoPlugin {
 
     // do not warn for tests (more relaxed environment)
     wartremover.wartremoverWarnings in (Compile, compile) ++= WartRemoverConfig.flaggedWarts
-  ) ++ CommonStatic.noPublishSettings ++ CommonStatic.commonSettings
+    )
 
 
-  override def globalSettings: Seq[Def.Setting[_]] = Seq(
+  override def globalSettings: Seq[Setting[_]] = Seq(
     resolvers ++= Seq(CommonStatic.superphoneReleasesSonatype, CommonStatic.superphoneSnapshotsSonatype)
   )
 
@@ -51,7 +53,7 @@ object SbtStdScalaConfigurer extends AutoPlugin {
 }
 
 object CommonStatic {
-  val commonSettings = Seq(
+  val commonSettings: Seq[Setting[_]] = Seq(
     organization := "io.superphone",
     organizationName := "Disruptive Multimedia",
     testOptions in Test += Tests.Setup(() => SbtDotenv.trigger),
@@ -65,13 +67,13 @@ object CommonStatic {
   val superphoneSnapshotsSonatype = "Superphone Sonatype Snapshots" at "http://ec2-34-203-53-140.compute-1.amazonaws.com:8081/repository/maven-snapshots/"
 
   // disables publishing
-  val noPublishSettings = Seq(
+  val noPublishSettings: Seq[Setting[_]] = Seq(
     publish := (),
     publishLocal := (),
     publishArtifact := false
   )
 
-  val publishSettings = Seq(
+  val publishSettings: Seq[Setting[_]] = Seq(
     publishTo := Some {
       if (isSnapshot.value) superphoneSnapshotsSonatype
       else superphoneReleasesSonatype
