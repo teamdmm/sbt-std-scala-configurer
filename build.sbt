@@ -13,11 +13,12 @@ sbtPlugin := true
 addSbtPlugin(Dependencies.wartRemover)
 addSbtPlugin(Dependencies.scalaFmt)
 addSbtPlugin(Dependencies.dotEnv)
+addSbtPlugin(Dependencies.coursier)
 
 licenses +=("Apache-2.0", url("http://opensource.org/licenses/apache2.0.php"))
 
-val superphoneReleasesSonatype = "Superphone Sonatype Releases" at "http://ec2-54-211-237-71.compute-1.amazonaws.com:8081/repository/maven-releases/"
-val superphoneSnapshotsSonatype = "Superphone Sonatype Snapshots" at "http://ec2-54-211-237-71.compute-1.amazonaws.com:8081/repository/maven-snapshots/"
+val superphoneReleasesSonatype = "Superphone Sonatype Releases" at "http://ec2-34-203-53-140.compute-1.amazonaws.com:8081/repository/maven-releases/"
+val superphoneSnapshotsSonatype = "Superphone Sonatype Snapshots" at "http://ec2-34-203-53-140.compute-1.amazonaws.com:8081/repository/maven-snapshots/"
 
 publishTo := Some {
   if (isSnapshot.value) superphoneSnapshotsSonatype

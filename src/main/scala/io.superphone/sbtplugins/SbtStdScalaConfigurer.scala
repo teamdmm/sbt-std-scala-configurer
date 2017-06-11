@@ -12,6 +12,7 @@ object SbtStdScalaConfigurer extends AutoPlugin {
       plugins.JvmPlugin &&
       org.scalafmt.sbt.ScalafmtPlugin &&
       wartremover.WartRemover &&
+      coursier.CoursierPlugin &&
       au.com.onegeek.sbtdotenv.SbtDotenv
 
   object autoImport {
@@ -60,8 +61,8 @@ object CommonStatic {
   )
 
   // -- some common settings
-  val superphoneReleasesSonatype = "Superphone Sonatype Releases" at "http://ec2-54-211-237-71.compute-1.amazonaws.com:8081/repository/maven-releases/"
-  val superphoneSnapshotsSonatype = "Superphone Sonatype Snapshots" at "http://ec2-54-211-237-71.compute-1.amazonaws.com:8081/repository/maven-snapshots/"
+  val superphoneReleasesSonatype = "Superphone Sonatype Releases" at "http://ec2-34-203-53-140.compute-1.amazonaws.com:8081/repository/maven-releases/"
+  val superphoneSnapshotsSonatype = "Superphone Sonatype Snapshots" at "http://ec2-34-203-53-140.compute-1.amazonaws.comm:8081/repository/maven-snapshots/"
 
   // disables publishing
   val noPublishSettings = Seq(
