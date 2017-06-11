@@ -41,8 +41,7 @@ object SbtStdScalaConfigurer extends AutoPlugin {
 
     // do not warn for tests (more relaxed environment)
     wartremover.wartremoverWarnings in (Compile, compile) ++= WartRemoverConfig.flaggedWarts
-    )
-
+    ) ++ CommonStatic.commonSettings
 
   override def globalSettings: Seq[Setting[_]] = Seq(
     resolvers ++= Seq(CommonStatic.superphoneReleasesSonatype, CommonStatic.superphoneSnapshotsSonatype)
