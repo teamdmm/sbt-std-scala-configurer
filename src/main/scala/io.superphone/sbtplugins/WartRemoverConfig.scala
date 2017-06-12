@@ -28,7 +28,7 @@ object WartRemoverConfig {
       FinalCaseClass,
       //FinalVal,
       ImplicitConversion,
-      ImplicitParameter,
+      //ImplicitParameter, // for execution context and akka systems :|
       //IsInstanceOf,
       JavaConversions,
       LeakingSealed,
