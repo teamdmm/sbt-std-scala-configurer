@@ -65,7 +65,7 @@ object CommonStatic {
     shellPrompt := { state =>
       val project = Project.extract(state).currentRef.project
       // deterministic color
-      val color = shellColors(project.hashCode % shellColors.length)
+      val color = shellColors(Math.abs(project.hashCode) % shellColors.length)
       color + project + "> " + scala.Console.RESET
     }
   )
