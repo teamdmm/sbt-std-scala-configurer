@@ -55,8 +55,6 @@ object CommonStatic {
   import scala.Console._
   val shellColors = Array(GREEN, MAGENTA, RED, YELLOW, CYAN)
   val commonSettings: Seq[Setting[_]] = Seq(
-    organization := "io.superphone",
-    organizationName := "Disruptive Multimedia",
     testOptions in Test += Tests.Setup(() => SbtDotenv.trigger),
     sources in (Compile, doc) := Seq.empty,
     updateOptions := updateOptions.value.withCachedResolution(true),
