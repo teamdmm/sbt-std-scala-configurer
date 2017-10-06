@@ -69,8 +69,8 @@ object CommonStatic {
   )
 
   // -- some common settings
-  val superphoneReleasesSonatype = "Superphone Sonatype Releases" at "http://ec2-34-203-53-140.compute-1.amazonaws.com:8081/repository/maven-releases/"
-  val superphoneSnapshotsSonatype = "Superphone Sonatype Snapshots" at "http://ec2-34-203-53-140.compute-1.amazonaws.com:8081/repository/maven-snapshots/"
+  val superphoneReleasesSonatype = "Superphone Sonatype Releases" at "http://repo.superphone.io/repository/maven-releases/"
+  val superphoneSnapshotsSonatype = "Superphone Sonatype Snapshots" at "http://repo.superphone.io/repository/maven-snapshots/"
 
   // disables publishing
   val noPublishSettings: Seq[Setting[_]] = Seq(
