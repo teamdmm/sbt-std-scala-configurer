@@ -17,8 +17,8 @@ addSbtPlugin(Dependencies.coursier)
 
 licenses +=("Apache-2.0", url("http://opensource.org/licenses/apache2.0.php"))
 
-val superphoneReleasesSonatype = "Superphone Sonatype Releases" at "http://repo.superphone.io/repository/maven-releases/"
-val superphoneSnapshotsSonatype = "Superphone Sonatype Snapshots" at "http://repo.superphone.io/repository/maven-snapshots/"
+val superphoneReleasesSonatype = "Superphone Sonatype Releases" at "https://repo.superphone.io/repository/maven-releases/"
+val superphoneSnapshotsSonatype = "Superphone Sonatype Snapshots" at "https://repo.superphone.io/repository/maven-snapshots/"
 
 publishTo := Some {
   if (isSnapshot.value) superphoneSnapshotsSonatype
